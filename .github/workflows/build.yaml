@@ -20,6 +20,4 @@ jobs:
           python -m pip install -U pip setuptools
           python -m pip install mypy
       - name: run
-        run: |
-          cd mypy-issues
-          mypy platform_check.py
+        run: ./mypy-issues/run.sh
