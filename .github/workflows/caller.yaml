@@ -1,0 +1,10 @@
+name: CallReusable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  speak:
+    uses: sirosen/repro/.github/workflows/reusable.yaml@main

@@ -1,0 +1,21 @@
+on:
+  workflow_call:
+    inputs:
+      name:
+        type: "string"
+        required: false
+        default: "world"
+  workflow_dispatch:
+    inputs:
+      name:
+        required: false
+        default: "WORLD"
+
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: speak
+        run: |
+          echo 'Hello, ${{ inputs.name }}!'
