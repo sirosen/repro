@@ -8,4 +8,5 @@ else
   . .venv/bin/activate
 fi
 
-mypy app.py
+mypy ua_parser.py
+mypy minimal.py
