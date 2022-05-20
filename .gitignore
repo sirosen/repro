@@ -1,0 +1,5 @@
+.venv
+.venv*
+.tox
+__pycache__
+.py[co]
