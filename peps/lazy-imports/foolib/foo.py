@@ -1,10 +1,6 @@
 from .bar import Bar
 
 
-class BaseFoo:
+class Foo:
     def __init__(self, bar: Bar):
         self.bar = bar
-
-
-class Foo(BaseFoo):
-    pass
