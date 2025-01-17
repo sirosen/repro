@@ -1,0 +1,351 @@
+------
+ > [7/7] RUN .venv/bin/poetry install -vv:
+0.411 Trying to detect current active python executable as specified in the config.
+0.419 Found: /usr/local/bin/python
+0.455 Using virtualenv: /myapp/.venv
+0.519 Installing dependencies from lock file
+0.563
+0.563 Finding the necessary packages for the current system
+0.583
+0.583 Package operations: 11 installs, 1 update, 0 removals, 3 skipped
+0.583
+0.584   - Installing six (1.17.0)
+0.952   - Installing python-dateutil (2.9.0.post0)
+0.953   - Installing types-python-dateutil (2.9.0.20241206)
+1.331   - Installing arrow (1.3.0)
+1.331   - Installing cfgv (3.4.0)
+1.332   - Installing identify (2.6.5)
+1.335   - Installing nodeenv (1.9.1)
+1.336   - Installing pyyaml (6.0.2)
+1.338   - Updating virtualenv (0.1.dev870+gc877ecd c877ecd -> 20.28.1)
+2.891   - Installing distlib (0.3.9): Skipped for the following reason: Already installed
+2.891   - Installing filelock (3.16.1): Skipped for the following reason: Already installed
+2.891   - Installing fqdn (1.5.1 https://files.pythonhosted.org/packages/30/3e/a80a8c077fd798951169626cde3e239adeba7dab75deb3555716415bd9b0/fqdn-1.5.1.tar.gz)
+2.892   - Installing isoduration (20.11.0 https://files.pythonhosted.org/packages/7c/1a/3c8edc664e06e6bd06cce40c6b22da5f1429aa4224d0c590f3be21c91ead/isoduration-20.11.0.tar.gz)
+2.892   - Installing platformdirs (4.3.6): Skipped for the following reason: Already installed
+2.892   - Installing pre-commit (3.8.0)
+2.960 [virtualenv:virtualenv.discovery.builtin] find interpreter for spec PythonSpec(path=/myapp/.venv/bin/python)
+2.962 [virtualenv:virtualenv.discovery.builtin] find interpreter for spec PythonSpec(path=/myapp/.venv/bin/python)
+3.217 --- Logging error ---
+3.217 Traceback (most recent call last):
+3.217   File "/myapp/.venv/lib/python3.10/site-packages/poetry/console/logging/io_handler.py", line 22, in emit
+3.217     msg = self.format(record)
+3.217   File "/usr/local/lib/python3.10/logging/__init__.py", line 943, in format
+3.217     return fmt.format(record)
+3.217   File "/myapp/.venv/lib/python3.10/site-packages/poetry/console/logging/io_formatter.py", line 39, in format
+3.217     formatted = super().format(record)
+3.217   File "/usr/local/lib/python3.10/logging/__init__.py", line 678, in format
+3.217     record.message = record.getMessage()
+3.217   File "/usr/local/lib/python3.10/logging/__init__.py", line 368, in getMessage
+3.217     msg = msg % self.args
+3.217   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/py_info.py", line 270, in __str__
+3.217     (
+3.217   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/py_info.py", line 297, in spec
+3.217     # this method is not used by itself, so here and called functions can import stuff locally
+3.217 AttributeError: 'PythonInfo' object has no attribute 'free_threaded'
+3.217 Call stack:
+3.219   File "/usr/local/lib/python3.10/threading.py", line 973, in _bootstrap
+3.219     self._bootstrap_inner()
+3.219   File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+3.219     self.run()
+3.219   File "/usr/local/lib/python3.10/threading.py", line 953, in run
+3.219     self._target(*self._args, **self._kwargs)
+3.219   File "/usr/local/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+3.219     work_item.run()
+3.219   File "/usr/local/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+3.219     result = self.fn(*self.args, **self.kwargs)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 274, in _execute_operation
+3.219     result = self._do_execute_operation(operation)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 385, in _do_execute_operation
+3.219     result: int = getattr(self, f"_execute_{method}")(operation)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 509, in _execute_install
+3.219     status_code = self._install(operation)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 543, in _install
+3.219     archive = self._download_link(operation, Link(package.source_url))
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 714, in _download_link
+3.219     archive = self._chef.prepare(archive, output_dir=original_archive.parent)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/chef.py", line 43, in prepare
+3.219     return self._prepare_sdist(archive, destination=output_dir)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/chef.py", line 88, in _prepare_sdist
+3.219     return self._prepare(
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/chef.py", line 49, in _prepare
+3.219     with isolated_builder(
+3.219   File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+3.219     return next(self.gen)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/utils/isolated_build.py", line 180, in isolated_builder
+3.219     with ephemeral_environment(
+3.219   File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+3.219     return next(self.gen)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/utils/env/__init__.py", line 47, in ephemeral_environment
+3.219     EnvManager.build_venv(
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/utils/env/env_manager.py", line 552, in build_venv
+3.219     cli_result = virtualenv.cli_run(args, setup_logging=False)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/run/__init__.py", line 31, in cli_run
+3.219     of_session = session_via_cli(args, options, setup_logging, env)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/run/__init__.py", line 49, in session_via_cli
+3.219     parser, elements = build_parser(args, options, setup_logging, env)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/run/__init__.py", line 77, in build_parser
+3.219     parser._interpreter = interpreter = discover.interpreter  # noqa: SLF001
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/discover.py", line 41, in interpreter
+3.219     self._interpreter = self.run()
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py", line 60, in run
+3.219     result = get_interpreter(python_spec, self.try_first_with, self.app_data, self._env)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py", line 81, in get_interpreter
+3.219     LOGGER.info("proposed %s", interpreter)
+3.219   File "/usr/local/lib/python3.10/logging/__init__.py", line 1477, in info
+3.219     self._log(INFO, msg, args, **kwargs)
+3.219   File "/usr/local/lib/python3.10/logging/__init__.py", line 1624, in _log
+3.219     self.handle(record)
+3.219   File "/usr/local/lib/python3.10/logging/__init__.py", line 1634, in handle
+3.219     self.callHandlers(record)
+3.219   File "/usr/local/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+3.219     hdlr.handle(record)
+3.219   File "/usr/local/lib/python3.10/logging/__init__.py", line 968, in handle
+3.219     self.emit(record)
+3.219   File "/myapp/.venv/lib/python3.10/site-packages/poetry/console/logging/io_handler.py", line 30, in emit
+3.219     self.handleError(record)
+3.219 Message: '<fg=blue>proposed %s</>'
+3.219 Arguments: (PythonInfo({'platform': 'linux', 'implementation': 'CPython', 'version_info': VersionInfo(major=3, minor=10, micro=16, releaselevel='final', serial=0), 'architecture': 64, 'version_nodot': '310', 'version': '3.10.16 (main, Jan 14 2025, 02:25:17) [GCC 12.2.0]', 'os': 'posix', 'prefix': '/usr/local', 'base_prefix': '/usr/local', 'real_prefix': None, 'base_exec_prefix': '/usr/local', 'exec_prefix': '/usr/local', 'executable': '/usr/local/bin/python3.10', 'original_executable': '/usr/local/bin/python3.10', 'system_executable': '/usr/local/bin/python3.10', 'has_venv': True, 'path': ['/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery', '/usr/local/lib/python310.zip', '/usr/local/lib/python3.10', '/usr/local/lib/python3.10/lib-dynload', '/usr/local/lib/python3.10/site-packages'], 'file_system_encoding': 'utf-8', 'stdout_encoding': 'utf-8', 'sysconfig_scheme': None, 'sysconfig_paths': {'stdlib': '{installed_base}/{platlibdir}/python{py_version_short}', 'platstdlib': '{platbase}/{platlibdir}/python{py_version_short}', 'purelib': '{base}/lib/python{py_version_short}/site-packages', 'platlib': '{platbase}/{platlibdir}/python{py_version_short}/site-packages', 'include': '{installed_base}/include/python{py_version_short}{abiflags}', 'scripts': '{base}/bin', 'data': '{base}'}, 'distutils_install': {'purelib': 'lib/python3.10/site-packages', 'platlib': 'lib/python3.10/site-packages', 'headers': 'include/python3.10/UNKNOWN', 'scripts': 'bin', 'data': ''}, 'sysconfig': {'makefile_filename': '/usr/local/lib/python3.10/config-3.10-x86_64-linux-gnu/Makefile'}, 'sysconfig_vars': {'platbase': '/usr/local', 'platlibdir': 'lib', 'py_version_short': '3.10', 'base': '/usr/local', 'PYTHONFRAMEWORK': '', 'abiflags': '', 'installed_base': '/usr/local'}, 'system_stdlib': '/usr/local/lib/python3.10', 'system_stdlib_platform': '/usr/local/lib/python3.10', 'max_size': 9223372036854775807}),)
+3.233 --- Logging error ---
+3.233 Traceback (most recent call last):
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/console/logging/io_handler.py", line 22, in emit
+3.233     msg = self.format(record)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 943, in format
+3.233     return fmt.format(record)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/console/logging/io_formatter.py", line 39, in format
+3.233     formatted = super().format(record)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 678, in format
+3.233     record.message = record.getMessage()
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 368, in getMessage
+3.233     msg = msg % self.args
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/py_info.py", line 270, in __str__
+3.233     (
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/py_info.py", line 297, in spec
+3.233     # this method is not used by itself, so here and called functions can import stuff locally
+3.233 AttributeError: 'PythonInfo' object has no attribute 'free_threaded'
+3.233 Call stack:
+3.233   File "/usr/local/lib/python3.10/threading.py", line 973, in _bootstrap
+3.233     self._bootstrap_inner()
+3.233   File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+3.233     self.run()
+3.233   File "/usr/local/lib/python3.10/threading.py", line 953, in run
+3.233     self._target(*self._args, **self._kwargs)
+3.233   File "/usr/local/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+3.233     work_item.run()
+3.233   File "/usr/local/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+3.233     result = self.fn(*self.args, **self.kwargs)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 274, in _execute_operation
+3.233     result = self._do_execute_operation(operation)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 385, in _do_execute_operation
+3.233     result: int = getattr(self, f"_execute_{method}")(operation)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 509, in _execute_install
+3.233     status_code = self._install(operation)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 543, in _install
+3.233     archive = self._download_link(operation, Link(package.source_url))
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/executor.py", line 714, in _download_link
+3.233     archive = self._chef.prepare(archive, output_dir=original_archive.parent)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/chef.py", line 43, in prepare
+3.233     return self._prepare_sdist(archive, destination=output_dir)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/chef.py", line 88, in _prepare_sdist
+3.233     return self._prepare(
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/installation/chef.py", line 49, in _prepare
+3.233     with isolated_builder(
+3.233   File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+3.233     return next(self.gen)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/utils/isolated_build.py", line 180, in isolated_builder
+3.233     with ephemeral_environment(
+3.233   File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+3.233     return next(self.gen)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/utils/env/__init__.py", line 47, in ephemeral_environment
+3.233     EnvManager.build_venv(
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/utils/env/env_manager.py", line 552, in build_venv
+3.233     cli_result = virtualenv.cli_run(args, setup_logging=False)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/run/__init__.py", line 31, in cli_run
+3.233     of_session = session_via_cli(args, options, setup_logging, env)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/run/__init__.py", line 49, in session_via_cli
+3.233     parser, elements = build_parser(args, options, setup_logging, env)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/run/__init__.py", line 77, in build_parser
+3.233     parser._interpreter = interpreter = discover.interpreter  # noqa: SLF001
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/discover.py", line 41, in interpreter
+3.233     self._interpreter = self.run()
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py", line 60, in run
+3.233     result = get_interpreter(python_spec, self.try_first_with, self.app_data, self._env)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py", line 81, in get_interpreter
+3.233     LOGGER.info("proposed %s", interpreter)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 1477, in info
+3.233     self._log(INFO, msg, args, **kwargs)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 1624, in _log
+3.233     self.handle(record)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 1634, in handle
+3.233     self.callHandlers(record)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+3.233     hdlr.handle(record)
+3.233   File "/usr/local/lib/python3.10/logging/__init__.py", line 968, in handle
+3.233     self.emit(record)
+3.233   File "/myapp/.venv/lib/python3.10/site-packages/poetry/console/logging/io_handler.py", line 30, in emit
+3.233     self.handleError(record)
+3.233 Message: '<fg=blue>proposed %s</>'
+3.233 Arguments: (PythonInfo({'architecture': 64, 'base_exec_prefix': '/usr/local', 'base_prefix': '/usr/local', 'distutils_install': {'data': '', 'headers': 'include/python3.10/UNKNOWN', 'platlib': 'lib/python3.10/site-packages', 'purelib': 'lib/python3.10/site-packages', 'scripts': 'bin'}, 'exec_prefix': '/usr/local', 'executable': '/usr/local/bin/python3.10', 'file_system_encoding': 'utf-8', 'has_venv': True, 'implementation': 'CPython', 'max_size': 9223372036854775807, 'original_executable': '/usr/local/bin/python3.10', 'os': 'posix', 'path': ['/myapp/.venv/lib/python3.10/site-packages/virtualenv/discovery', '/usr/local/lib/python310.zip', '/usr/local/lib/python3.10', '/usr/local/lib/python3.10/lib-dynload', '/usr/local/lib/python3.10/site-packages'], 'platform': 'linux', 'prefix': '/usr/local', 'real_prefix': None, 'stdout_encoding': 'utf-8', 'sysconfig': {'makefile_filename': '/usr/local/lib/python3.10/config-3.10-x86_64-linux-gnu/Makefile'}, 'sysconfig_paths': {'data': '{base}', 'include': '{installed_base}/include/python{py_version_short}{abiflags}', 'platlib': '{platbase}/{platlibdir}/python{py_version_short}/site-packages', 'platstdlib': '{platbase}/{platlibdir}/python{py_version_short}', 'purelib': '{base}/lib/python{py_version_short}/site-packages', 'scripts': '{base}/bin', 'stdlib': '{installed_base}/{platlibdir}/python{py_version_short}'}, 'sysconfig_scheme': None, 'sysconfig_vars': {'PYTHONFRAMEWORK': '', 'abiflags': '', 'base': '/usr/local', 'installed_base': '/usr/local', 'platbase': '/usr/local', 'platlibdir': 'lib', 'py_version_short': '3.10'}, 'system_executable': '/usr/local/bin/python3.10', 'system_stdlib': '/usr/local/lib/python3.10', 'system_stdlib_platform': '/usr/local/lib/python3.10', 'version': '3.10.16 (main, Jan 14 2025, 02:25:17) [GCC 12.2.0]', 'version_info': VersionInfo(major=3, minor=10, micro=16, releaselevel='final', serial=0), 'version_nodot': '310'}),)
+3.262
+3.262   Stack trace:
+3.262
+3.262   19  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:274 in _execute_operation
+3.263         result = self._do_execute_operation(operation)
+3.263
+3.263   18  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:385 in _do_execute_operation
+3.263         result: int = getattr(self, f"_execute_{method}")(operation)
+3.263
+3.263   17  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:509 in _execute_install
+3.263         status_code = self._install(operation)
+3.264
+3.264   16  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:543 in _install
+3.264         archive = self._download_link(operation, Link(package.source_url))
+3.264
+3.264   15  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:714 in _download_link
+3.264         archive = self._chef.prepare(archive, output_dir=original_archive.parent)
+3.264
+3.264   14  .venv/lib/python3.10/site-packages/poetry/installation/chef.py:43 in prepare
+3.264         return self._prepare_sdist(archive, destination=output_dir)
+3.264
+3.264   13  .venv/lib/python3.10/site-packages/poetry/installation/chef.py:88 in _prepare_sdist
+3.264         return self._prepare(
+3.264
+3.264   12  .venv/lib/python3.10/site-packages/poetry/installation/chef.py:49 in _prepare
+3.264         with isolated_builder(
+3.264
+3.264   11  /usr/local/lib/python3.10/contextlib.py:135 in __enter__
+3.264         return next(self.gen)
+3.264
+3.264   10  .venv/lib/python3.10/site-packages/poetry/utils/isolated_build.py:180 in isolated_builder
+3.264         with ephemeral_environment(
+3.264
+3.264    9  /usr/local/lib/python3.10/contextlib.py:135 in __enter__
+3.264         return next(self.gen)
+3.264
+3.264    8  .venv/lib/python3.10/site-packages/poetry/utils/env/__init__.py:47 in ephemeral_environment
+3.264         EnvManager.build_venv(
+3.264
+3.264    7  .venv/lib/python3.10/site-packages/poetry/utils/env/env_manager.py:552 in build_venv
+3.265         cli_result = virtualenv.cli_run(args, setup_logging=False)
+3.265
+3.265    6  .venv/lib/python3.10/site-packages/virtualenv/run/__init__.py:31 in cli_run
+3.265         of_session = session_via_cli(args, options, setup_logging, env)
+3.265
+3.265    5  .venv/lib/python3.10/site-packages/virtualenv/run/__init__.py:49 in session_via_cli
+3.265         parser, elements = build_parser(args, options, setup_logging, env)
+3.265
+3.265    4  .venv/lib/python3.10/site-packages/virtualenv/run/__init__.py:77 in build_parser
+3.265         parser._interpreter = interpreter = discover.interpreter  # noqa: SLF001
+3.265
+3.265    3  .venv/lib/python3.10/site-packages/virtualenv/discovery/discover.py:41 in interpreter
+3.265         self._interpreter = self.run()
+3.265
+3.265    2  .venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py:60 in run
+3.265         result = get_interpreter(python_spec, self.try_first_with, self.app_data, self._env)
+3.265
+3.265    1  .venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py:82 in get_interpreter
+3.265         if interpreter.satisfies(spec, impl_must_match):
+3.265
+3.265   AttributeError
+3.265
+3.265   'PythonSpec' object has no attribute 'free_threaded'
+3.265
+3.265   at .venv/lib/python3.10/site-packages/virtualenv/discovery/py_info.py:335 in satisfies
+3.278       331│                 return False
+3.278       332│         return True
+3.278       333│
+3.278       334│     _current_system = None
+3.278     → 335│     _current = None
+3.278       336│
+3.278       337│     @classmethod
+3.278       338│     def current(cls, app_data=None):
+3.278       339│         """
+3.278
+3.278 Cannot install fqdn.
+3.278
+3.278
+3.278   Stack trace:
+3.278
+3.278   19  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:274 in _execute_operation
+3.279         result = self._do_execute_operation(operation)
+3.279
+3.279   18  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:385 in _do_execute_operation
+3.279         result: int = getattr(self, f"_execute_{method}")(operation)
+3.279
+3.279   17  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:509 in _execute_install
+3.279         status_code = self._install(operation)
+3.279
+3.279   16  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:543 in _install
+3.279         archive = self._download_link(operation, Link(package.source_url))
+3.279
+3.279   15  .venv/lib/python3.10/site-packages/poetry/installation/executor.py:714 in _download_link
+3.279         archive = self._chef.prepare(archive, output_dir=original_archive.parent)
+3.279
+3.279   14  .venv/lib/python3.10/site-packages/poetry/installation/chef.py:43 in prepare
+3.279         return self._prepare_sdist(archive, destination=output_dir)
+3.279
+3.279   13  .venv/lib/python3.10/site-packages/poetry/installation/chef.py:88 in _prepare_sdist
+3.279         return self._prepare(
+3.279
+3.279   12  .venv/lib/python3.10/site-packages/poetry/installation/chef.py:49 in _prepare
+3.279         with isolated_builder(
+3.280
+3.280   11  /usr/local/lib/python3.10/contextlib.py:135 in __enter__
+3.280         return next(self.gen)
+3.280
+3.280   10  .venv/lib/python3.10/site-packages/poetry/utils/isolated_build.py:180 in isolated_builder
+3.280         with ephemeral_environment(
+3.280
+3.280    9  /usr/local/lib/python3.10/contextlib.py:135 in __enter__
+3.280         return next(self.gen)
+3.280
+3.280    8  .venv/lib/python3.10/site-packages/poetry/utils/env/__init__.py:47 in ephemeral_environment
+3.280         EnvManager.build_venv(
+3.280
+3.280    7  .venv/lib/python3.10/site-packages/poetry/utils/env/env_manager.py:552 in build_venv
+3.280         cli_result = virtualenv.cli_run(args, setup_logging=False)
+3.280
+3.280    6  .venv/lib/python3.10/site-packages/virtualenv/run/__init__.py:31 in cli_run
+3.280         of_session = session_via_cli(args, options, setup_logging, env)
+3.280
+3.280    5  .venv/lib/python3.10/site-packages/virtualenv/run/__init__.py:49 in session_via_cli
+3.280         parser, elements = build_parser(args, options, setup_logging, env)
+3.280
+3.280    4  .venv/lib/python3.10/site-packages/virtualenv/run/__init__.py:77 in build_parser
+3.281         parser._interpreter = interpreter = discover.interpreter  # noqa: SLF001
+3.281
+3.281    3  .venv/lib/python3.10/site-packages/virtualenv/discovery/discover.py:41 in interpreter
+3.281         self._interpreter = self.run()
+3.281
+3.281    2  .venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py:60 in run
+3.281         result = get_interpreter(python_spec, self.try_first_with, self.app_data, self._env)
+3.281
+3.281    1  .venv/lib/python3.10/site-packages/virtualenv/discovery/builtin.py:82 in get_interpreter
+3.281         if interpreter.satisfies(spec, impl_must_match):
+3.281
+3.281   AttributeError
+3.281
+3.281   'PythonSpec' object has no attribute 'free_threaded'
+3.281
+3.281   at .venv/lib/python3.10/site-packages/virtualenv/discovery/py_info.py:335 in satisfies
+3.294       331│                 return False
+3.294       332│         return True
+3.294       333│
+3.294       334│     _current_system = None
+3.294     → 335│     _current = None
+3.294       336│
+3.294       337│     @classmethod
+3.294       338│     def current(cls, app_data=None):
+3.294       339│         """
+3.294
+3.294 Cannot install isoduration.
+3.294
+------
+Dockerfile:12
+--------------------
+  10 |     COPY pyproject.toml poetry.lock poetry.toml ./
+  11 |     COPY src src
+  12 | >>> RUN .venv/bin/poetry install -vv
+  13 |
+--------------------
+ERROR: failed to solve: process "/bin/sh -c .venv/bin/poetry install -vv" did not complete successfully: exit code: 1

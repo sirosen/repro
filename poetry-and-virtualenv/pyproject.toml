@@ -1,0 +1,19 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# poetry
+# ------
+
+[tool.poetry]
+name = "myapp"
+version = "1.0"
+description = "hi"
+authors = ["Stephen Rosen <sirosen0@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+fqdn = {url = "https://files.pythonhosted.org/packages/30/3e/a80a8c077fd798951169626cde3e239adeba7dab75deb3555716415bd9b0/fqdn-1.5.1.tar.gz"}
+isoduration = {url = "https://files.pythonhosted.org/packages/7c/1a/3c8edc664e06e6bd06cce40c6b22da5f1429aa4224d0c590f3be21c91ead/isoduration-20.11.0.tar.gz"}
+virtualenv = "20.28.1"
+pre-commit = "^3"
