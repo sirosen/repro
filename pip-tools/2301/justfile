@@ -1,0 +1,6 @@
+run:
+    -rm doc.txt old.doc.txt
+    pip-compile -q --strip-extras doc.in -o doc.txt
+    cp doc.txt old.doc.txt
+    pip-compile -q --strip-extras doc.in -o doc.txt
+    -diff doc.txt old.doc.txt
