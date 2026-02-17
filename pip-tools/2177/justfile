@@ -1,0 +1,8 @@
+all: setup run
+
+setup:
+    python3.11 -m venv --upgrade-deps .venv
+    .venv/bin/pip install pip-tools
+
+run:
+    .venv/bin/pip-compile --resolver=backtracking --strip-extras --upgrade --extra runtime -o requirements-runtime.txt pyproject.toml
