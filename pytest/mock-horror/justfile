@@ -1,0 +1,8 @@
+all: install run
+
+install:
+    python -m venv --upgrade-deps .venv
+    .venv/bin/pip install pytest
+
+run:
+    .venv/bin/pytest
